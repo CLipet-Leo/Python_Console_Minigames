@@ -13,3 +13,4 @@ while b < 1000:
     #b prend la valeur de x
     b = x
 
+#test
