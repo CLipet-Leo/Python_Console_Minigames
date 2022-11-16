@@ -55,7 +55,7 @@ def resultat():
             #alors afficher "gagné"
             result = "Gagné"
     #si choixJoueur == 2 alors
-    elif coupJoueur == 2:
+    if coupJoueur == 2:
         #si choixBot == 1
         if coupBot == 1:
             #alors afficher "gagné"
@@ -69,7 +69,7 @@ def resultat():
             #alors afficher "perdu"
             result = "Perdu"
     #si choixJoueur == 3 alors
-    else:
+    if coupJoueur == 3:
         #si choixBot == 1
         if coupBot == 1:
             #alors afficher "perdu"
