@@ -4,15 +4,16 @@
 import random
 #on admet input une fonction qui renvoie la valeur qu'a donner le joueur
 
+#définir une fonction coup() qui définis les valeurs 1, 2 et 3 en chaîne de caractères
 def coup(num):
     if num == "1":
-        #définir pierre = 1
+        #définir 1 = pierre
         return "pierre"
     if num == "2":
-        #définir feuille = 2
+        #définir 2 = feuille
         return "feuille"
     if num == "3":
-        #définir ciseau = 3
+        #définir 3 = ciseau
         return "ciseau"
 
 #définir une fonction choixBot
@@ -88,8 +89,10 @@ def resultat():
         else:
             #alors afficher "égalité"
             result = "Egalité"
+    #retourner la valeur
     return result
 
+#afficher la fonction resultat()
 print(resultat())
 
 #FIN
