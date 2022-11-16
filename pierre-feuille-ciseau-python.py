@@ -1,116 +1,95 @@
-#DEBUT
+# DEBUT
 
-#on admet random une fonction qui renvoie une valeur aléatoire entre 1 et 3
+# on admet random une fonction qui renvoie une valeur aléatoire entre 1 et 3
 import random
-#on admet input une fonction qui renvoie la valeur qu'a donner le joueur
+# on admet input une fonction qui renvoie la valeur qu'a donner le joueur
 
-scoreP = 0
-scoreB = 0
-
-#définir une fonction coup() qui définis les valeurs 1, 2 et 3 en chaîne de caractères
+# définir une fonction coup() qui définis les valeurs 1, 2 et 3 en chaîne de caractères
 def coup(num):
-    if num == "1":
-        #définir 1 = pierre
+    if num == 1:
+        # définir 1 = pierre
         return "pierre"
-    elif num == "2":
-        #définir 2 = feuille
+    elif num == 2:
+        # définir 2 = feuille
         return "feuille"
-    elif num == "3":
-        #définir 3 = ciseau
+    elif num == 3:
+        # définir 3 = ciseau
         return "ciseau"
     else:
         return "Mauvaise saisie"
 
-
-while scoreP or scoreB < 3:
-    #définir une fonction choixBot
-    def choixBot():
-        #définir une variable randomNb prend pour valeur le retour de l'execution de la fonction random(1, 3)
-        randomNb = random.randint(1, 3)
-        mystring = str(randomNb)
-        #retourner randomNb
-        return mystring
-
-    #définir une fonction choixJoueur
-    def choixJoueur():
-        #définir une variable choiceP1 qui prend pour valeur le retour de l'execution de la fonction input(1, 3)
-        choiceP1 = input("Quel coup veut-tu jouer : Pierre 1, Feuille 2 ou Ciseau 3 ? ")
-        if choiceP1 == "1" or "2" or "3":
-            #retourner la valeur
-            return choiceP1
-        else:
-            print("La valeur n'est pas valide, veullez entrer 1, 2 ou 3")
-        
-
-    #définir une fonction resultat
-    def resultat():
-        scoreP = ""
-        scoreB = ""
-        result = ""
-        #définir coupJoueur une variable qui est égale à la fonction choixJoueur()
-        coupJoueur = choixJoueur()
+def resultat():
+    scoreP = 0
+    scoreB = 0
+    while scoreP or scoreB < 3:
+        # définir coupJoueur une variable qui est égale à la fonction choixJoueur()
+        coupJoueur = int(input("Quel coup veut-tu jouer : Pierre 1, Feuille 2 ou Ciseau 3 ? ", ))
         turnJoueur = coup(coupJoueur)
-        print("Tu as joué ", coupJoueur, ", c'est à dire : ", turnJoueur)
-        #définir coupBot une variable qui est égale à la fonction choixBot()
-        coupBot = choixBot()
+        print("Tu as joué ", turnJoueur)
+        # définir coupBot une variable qui est égale à la fonction choixBot()
+        coupBot = random.randint(1, 3)
         turnBot = coup(coupBot)
-        print("Le bot a joué ", coupBot, ", c'est à dire : ", turnBot)
-        #si choixJoueur == 1 alors
-        if coupJoueur == "1":
-            #si choixBot == 1
-            if coupBot == "1":
-                #alors afficher "égalité"
-                result = "Egalité"
-            #si choixBot == 2
-            elif coupBot == "2":
-                #alors afficher "perdu"
-                result = "Perdu"
+        print("Le bot a joué ", turnBot)
+        # si choixJoueur == 1 alors
+        if coupJoueur == 1:
+            # si choixBot == 1
+            if coupBot == 1:
+                # alors afficher "égalité"
+                print("Egalité")
+            # si choixBot == 2
+            elif coupBot == 2:
+                # alors afficher "perdu"
+                print("Perdu")
                 scoreB = scoreB + 1
-            #si choixBot == 3
+            # si choixBot == 3
             else:
-                #alors afficher "gagné"
-                result = "Gagné"
+                # alors afficher "gagné"
+                print("Gagné")
                 scoreP = scoreP + 1
-        #si choixJoueur == 2 alors
-        elif coupJoueur == "2":
-            #si choixBot == 1
-            if coupBot == "1":
-                #alors afficher "gagné"
-                result = "Gagné"
+        # si choixJoueur == 2 alors
+        elif coupJoueur == 2:
+            # si choixBot == 1
+            if coupBot == 1:
+                # alors afficher "gagné"
+                print("Gagné")
                 scoreP = scoreP + 1
-            #si choixBot == 2
-            elif coupBot == "2":
-                #alors afficher "égalité"
-                result = "Egalité"
-            #si choixBot == 3
+            # si choixBot == 2
+            elif coupBot == 2:
+                # alors afficher "égalité"
+                print("Egalité")
+            # si choixBot == 3
             else:
-                #alors afficher "perdu"
-                result = "Perdu"
+                # alors afficher "perdu"
+                print("Perdu")
                 scoreB = scoreB + 1
-        #si choixJoueur == 3 alors
-        elif coupJoueur == "3":
-            #si choixBot == 1
-            if coupBot == "1":
-                #alors afficher "perdu"
-                result = "Perdu"
+        # si choixJoueur == 3 alors
+        elif coupJoueur == 3:
+            # si choixBot == 1
+            if coupBot == 1:
+                # alors afficher "perdu"
+                print("Perdu")
                 scoreB = scoreB + 1
-            #si choixBot == 2
-            elif coupBot == "2":
-                #alors afficher "gagné"
-                result = "Gagné"
+            # si choixBot == 2
+            elif coupBot == 2:
+                # alors afficher "gagné"
+                print("Gagné")
                 scoreP = scoreP + 1
-            #si choixBot == 3
+            # si choixBot == 3
             else:
-                #alors afficher "égalité"
-                result = "Egalité"
-        #retourner la valeur
-        return result
+                # alors afficher "égalité"
+                print("Egalité")
+        else:
+            print("Votre choix n'est pas correct, vérifiez la valeur")
+        
+        print("Ton résultat est de : ", scoreP)
+        print("Le résultat du BOT est de : ", scoreB)
+        if scoreP == 3:
+            print("Victoire du Joueur")
+            break
+        elif scoreB == 3:
+            print("Victoire du Bot !!!! T nul")
+            break      
 
-    #afficher la fonction resultat()
-    print(resultat())
-    print("Ton résultat est de : ", scoreP)
-    print("Le résultat du BOT est de : ", scoreB)
-
-
-
-#FIN
+# appeler la fonction resultat()
+resultat()
+# FIN
