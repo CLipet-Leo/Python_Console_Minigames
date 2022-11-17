@@ -1,5 +1,3 @@
-#DEBUT
-
 #définir une fonction afficher_grille() avec comme paramètre grille
     #afficher le numéro de chaques colonnes
     #afficher la permière ligne
@@ -42,7 +40,26 @@
             #alors retourner la valeur 0
     #retourner la valeur 1
 
+#DEBUT
 
-
+#définir la variable joueur est égale à 1
+#afficher "Joueur 1 tu possède les X, Joueur 2 tu possède les O"
+#afficher "Que le match COMMENCE !!!"
+#définir que les cases de la variable grille sont égale à " "
+#appeler la fonction afficher_grille(grille)
+#définir la variable gagne égale à 0
+#faire un boucle tant que la variable gagne est égale à 0 faire :
+    #appeler la fonction tour(grille,joueur)
+    #si la fonction gagnant(grille) est vraie
+        #alors afficher "Bravo joueur "(la variable joueur)" tu remporte la partie !"
+        #la variable gagne est égale à 1
+    #sinon:
+        #si la fonction match_nul(grille) est vraie
+            #alors afficher "Il n'y a plus de place ! C'est donc un match nul !"
+            #la variable gagne est égale à 1
+    #si la variable joueur est égale à 1:
+        #alors elle passe à 2
+    #sinon:
+        #la variable joueur est égale à 1
 
 #FIN
