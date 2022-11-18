@@ -17,7 +17,7 @@
     #définir la variable ligne comme input qui affiche "Et maintenant la ligne : "
     #afficher "OK ! C'est placé dans la case ("+numéro de la colonne+","+numéro de la ligne+")"
     #faire une boucle tant que la case selectionné est prise
-        #appeler la fonction afficher_grille()
+        #appeler la fonction afficher_grille(grille)
         #afficher "Cette case est déjà prise >:( selectionne un autre case !"
         #définir la variable colonne comme input qui affiche "Le numero de colonne que tu veux jouer : "
         #définir la variable ligne comme input qui affiche "Et maintenant la ligne : "
@@ -27,7 +27,7 @@
         #alors afficher "X" dans la case selectionner
     ##si la variable joueur est égale à 2
         #alors afficher O dans la case selectionner
-    #appeler la fonction afficher_grille()
+    #appeler la fonction afficher_grille(grille)
 
 #définir une fonction gagnant() avec comme paramètre grille
     #si case(...) est prise ET case(...) est prise ET case(...) est différente de " "
