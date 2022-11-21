@@ -18,20 +18,30 @@ def afficher_grille(grille):
     print("   -------------")
 
 def tour(grille,joueur):
-    print("C'est à toi joueur"+str(joueur))
-    colonne = input("Le numero de colonne que tu veux jouer : ")
-    ligne = input("Et maintenant la ligne : ")
-    print("OK ! C'est placé dans la case ("+colonne+","+ligne+")")
-    while grille[int(colonne)+int(ligne)*3]!=" ":
-        afficher_grille(grille)
-        print("Cette case est déjà prise >:( selectionne un autre case !")
+    print("C'est à toi joueur "+str(joueur))
+    cover = 0
+    liver = 0
+    while cover == 0 or liver == 0:
         colonne = input("Le numero de colonne que tu veux jouer : ")
         ligne = input("Et maintenant la ligne : ")
-        print("OK ! C'est placé dans la case ("+colonne+","+ligne+")")
+        if grille[int(colonne)+int(ligne)*3]!=" ":
+            afficher_grille(grille)
+            print("Cette case est déjà prise >:( selectionne un autre case !")
+        elif colonne >= "3":
+            print("ta mère la pute tu sais pas écrire")
+            cover = 0
+        elif ligne >= "3":
+            print("ta mère la pute tu sais pas écrire")
+            liver = 0
+        else:
+            print("OK ! C'est placé dans la case ("+colonne+","+ligne+")")
+            cover = 1
+            liver = 1
+            break
     
     if joueur == 1:
         grille[int(colonne)+int(ligne)*3]="X"
-    if joueur == 1:
+    if joueur == 2:
         grille[int(colonne)+int(ligne)*3]="O"
     afficher_grille(grille)
 
@@ -62,7 +72,7 @@ def match_nul(grille):
     #pour i le nombre de case sur la grille allant jusqu'à 9
     for i in range(9):
         #si la valeur grille ayant comme paramètre i est égale à " " (c'est à dire qu'aucune ligne n'a été former par un joueur)
-        if grille[i] == " ":
+        if grille[i]==" ":
             #alors retourner la valeur 0
             return 0
     #retourner la valeur 1
