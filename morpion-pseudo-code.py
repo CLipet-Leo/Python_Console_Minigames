@@ -63,3 +63,30 @@
         #la variable joueur est égale à 1
 
 #FIN
+
+#test BOT
+
+#définir une fonction Bot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Si choix joueur  = 
