@@ -64,29 +64,11 @@
 
 #FIN
 
-#test BOT
+#TEST BOT
 
 #définir une fonction Bot
+#Si choix joueur = 2
+    #alors si case(...) est différente de " "
+        #alors placer sur case(...)
+    #répeter la boucle pour le nb de possibilité
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#Si choix joueur  = 
