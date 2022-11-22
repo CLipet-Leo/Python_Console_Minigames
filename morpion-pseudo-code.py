@@ -67,8 +67,62 @@
 #TEST BOT
 
 #définir une fonction Bot
-#Si choix joueur = 2
-    #alors si case(...) est différente de " "
-        #alors placer sur case(...)
-    #répeter la boucle pour le nb de possibilité
+#Si choix joueur = 2 alors:
+    #colonne
+    #si case(0,1) ET case(0,2) ET case(0,0) est égal à " "
+        #alors placer sur case(0,0)
+    #sinon si case(0,0) ET case(0,2) ET case(0,1) est égal à " "
+        #alors placer sur case(0,1)
+    #sinon si case(0,0) ET case(0,1) ET case(0,2) est égal à " "
+        #alors placer sur case(0,2)
+    #si case(1,1) ET case(1,2) ET case(1,0) est égal à " "
+        #alors placer sur case(1,0)
+    #sinon si case(1,0) ET case(1,2) ET case(1,1) est égal à " "
+        #alors placer sur case(1,1)
+    #sinon si case(1,0) ET case(1,1) ET case(1,2) est égal à " "
+        #alors placer sur case(1,2)
+    #si case(2,1) ET case(2,2) ET case(2,0) est égal à " "
+        #alors placer sur case(2,0)
+    #sinon si case(2,0) ET case(2,2) ET case(2,1) est égal à " "
+        #alors placer sur case(2,1)
+    #sinon si case(2,0) ET case(2,1) ET case(2,2) est égal à " "
+        #alors placer sur case(2,2)
+    
+    #ligne
+    #si case(1,0) ET case(2,0) ET case(0,0) est égal à " "
+        #alors placer sur case(0,0)
+    #sinon si case(0,0) ET case(2,0) ET case(1,0) est égal à " "
+        #alors placer sur case(1,0)
+    #sinon si case(0,0) ET case(1,0) ET case(2,0) est égal à " "
+        #alors placer sur case(2,0)
+    #si case(1,1) ET case(2,1) ET case(0,1) est égal à " "
+        #alors placer sur case(0,1)
+    #sinon si case(0,1) ET case(2,1) ET case(1,1) est égal à " "
+        #alors placer sur case(1,1)
+    #sinon si case(0,1) ET case(1,1) ET case(2,1) est égal à " "
+        #alors placer sur case(2,1)
+    #si case(1,2) ET case(2,2) ET case(0,2) est égal à " "
+        #alors placer sur case(0,2)
+    #sinon si case(1,2) ET case(2,2) ET case(1,2) est égal à " "
+        #alors placer sur case(1,2)
+    #sinon si case(0,2) ET case(1,2) ET case(2,2) est égal à " "
+        #alors placer sur case(2,2)
+    
+    #diagonale 1
+    #si case(1,1) ET case(2,2) ET case(0,0) est égal à " "
+        #alors placer sur case(0,0)
+    #sinon si case(0,0) ET case(2,2) ET case(1,1) est égal à " "
+        #alors placer sur case(1,1)
+    #sinon si case(0,0) ET case(1,1) ET case(2,2) est égal à " "
+        #alors placer sur case(2,2)
 
+    #diagonale 2
+    #si case(1,1) ET case(0,2) ET case(2,0) est égal à " "
+        #alors placer sur case(2,0)
+    #sinon si case(2,0) ET case(0,2) ET case(1,1) est égal à " "
+        #alors placer sur case(1,1)
+    #sinon si case(2,0) ET case(1,1) ET case(0,2) est égal à " "
+        #alors placer sur case(0,2)
+    
+    #case unique 
+    #
