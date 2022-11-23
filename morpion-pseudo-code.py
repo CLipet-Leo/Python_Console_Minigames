@@ -124,5 +124,5 @@
     #sinon si case(2,0) ET case(1,1) ET case(0,2) est égal à " "
         #alors placer sur case(0,2)
     
-    #case unique 
+    #case unique
     #
