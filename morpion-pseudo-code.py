@@ -64,65 +64,130 @@
 
 #FIN
 
-#TEST BOT
+#BOT
 
 #définir une fonction Bot
-#Si choix joueur = 2 alors:
-    #colonne
-    #si case(0,1) ET case(0,2) ET case(0,0) est égal à " "
-        #alors placer sur case(0,0)
-    #sinon si case(0,0) ET case(0,2) ET case(0,1) est égal à " "
-        #alors placer sur case(0,1)
-    #sinon si case(0,0) ET case(0,1) ET case(0,2) est égal à " "
-        #alors placer sur case(0,2)
-    #si case(1,1) ET case(1,2) ET case(1,0) est égal à " "
-        #alors placer sur case(1,0)
-    #sinon si case(1,0) ET case(1,2) ET case(1,1) est égal à " "
-        #alors placer sur case(1,1)
-    #sinon si case(1,0) ET case(1,1) ET case(1,2) est égal à " "
-        #alors placer sur case(1,2)
-    #si case(2,1) ET case(2,2) ET case(2,0) est égal à " "
-        #alors placer sur case(2,0)
-    #sinon si case(2,0) ET case(2,2) ET case(2,1) est égal à " "
-        #alors placer sur case(2,1)
-    #sinon si case(2,0) ET case(2,1) ET case(2,2) est égal à " "
-        #alors placer sur case(2,2)
-    
-    #ligne
-    #si case(1,0) ET case(2,0) ET case(0,0) est égal à " "
-        #alors placer sur case(0,0)
-    #sinon si case(0,0) ET case(2,0) ET case(1,0) est égal à " "
-        #alors placer sur case(1,0)
-    #sinon si case(0,0) ET case(1,0) ET case(2,0) est égal à " "
-        #alors placer sur case(2,0)
-    #si case(1,1) ET case(2,1) ET case(0,1) est égal à " "
-        #alors placer sur case(0,1)
-    #sinon si case(0,1) ET case(2,1) ET case(1,1) est égal à " "
-        #alors placer sur case(1,1)
-    #sinon si case(0,1) ET case(1,1) ET case(2,1) est égal à " "
-        #alors placer sur case(2,1)
-    #si case(1,2) ET case(2,2) ET case(0,2) est égal à " "
-        #alors placer sur case(0,2)
-    #sinon si case(1,2) ET case(2,2) ET case(1,2) est égal à " "
-        #alors placer sur case(1,2)
-    #sinon si case(0,2) ET case(1,2) ET case(2,2) est égal à " "
-        #alors placer sur case(2,2)
-    
-    #diagonale 1
-    #si case(1,1) ET case(2,2) ET case(0,0) est égal à " "
-        #alors placer sur case(0,0)
-    #sinon si case(0,0) ET case(2,2) ET case(1,1) est égal à " "
-        #alors placer sur case(1,1)
-    #sinon si case(0,0) ET case(1,1) ET case(2,2) est égal à " "
-        #alors placer sur case(2,2)
+#Si choix joueur  est égale à 2 alors:
+    #définir une liste place qui va du nombre 0 à 8
 
-    #diagonale 2
-    #si case(1,1) ET case(0,2) ET case(2,0) est égal à " "
-        #alors placer sur case(2,0)
-    #sinon si case(2,0) ET case(0,2) ET case(1,1) est égal à " "
-        #alors placer sur case(1,1)
-    #sinon si case(2,0) ET case(1,1) ET case(0,2) est égal à " "
-        #alors placer sur case(0,2)
+    #conditions de victoires
+    #si (case[0] est égale à case[1]) ET (case[0] est égale à "O") ET (case[2] n'est pas égale à "X"):
+        #alors placer "O" dans la case[2]
+    #sinon si (case[2] est égale à case[1]) ET (case[2] est égale à "O") ET (case[0] n'est pas égale à "X"):
+        #alors placer "O" dans la case[0]
+    #sinon si (case[0] est égale à case[2]) ET (case[0] est égale à "O") ET (case[1] n'est pas égale à "X"):
+        #alors placer "O" dans la case[1]
+    #sinon si (case[3] est égale à case[4]) ET (case[3] est égale à "O") ET (case[5] n'est pas égale à "X"):
+        #alors placer "O" dans la case[5]
+    #sinon si (case[5] est égale à case[4]) ET (case[5] est égale à "O") ET (case[3] n'est pas égale à "X"):
+        #alors placer "O" dans la case[3]
+    #sinon si (case[3] est égale à case[5]) ET (case[5] est égale à "O") ET (case[4] n'est pas égale à "X"):
+        #alors placer "O" dans la case[4]
+    #sinon si (case[6] est égale à case[7]) ET (case[6] est égale à "O") ET (case[8] n'est pas égale à "X"):
+        #alors placer "O" dans la case[8]
+    #sinon si (case[8] est égale à case[7]) ET (case[8] est égale à "O") ET (case[6] n'est pas égale à "X"):
+        #alors placer "O" dans la case[6]
+    #sinon si (case[6] est égale à case[8]) ET (case[6] est égale à "O") ET (case[7] n'est pas égale à "X"):
+        #alors placer "O" dans la case[7]
+    #sinon si (case[0] est égale à case[3]) ET (case[0] est égale à "O") ET (case[6] n'est pas égale à "X"):
+        #alors placer "O" dans la case[6]
+    #sinon si (case[3] est égale à case[6]) ET (case[3] est égale à "O") ET (case[0] n'est pas égale à "X"):
+        #alors placer "O" dans la case[0]
+    #sinon si (case[0] est égale à case[6]) ET (case[0] est égale à "O") ET (case[3] n'est pas égale à "X"):
+        #alors placer "O" dans la case[3]
+    #sinon si (case[1] est égale à case[4]) ET (case[1] est égale à "O") ET (case[7] n'est pas égale à "X"):
+        #alors placer "O" dans la case[7]
+    #sinon si (case[4] est égale à case[7]) ET (case[7] est égale à "O") ET (case[1] n'est pas égale à "X"):
+        #alors placer "O" dans la case[1]
+    #sinon si (case[1] est égale à case[7]) ET (case[7] est égale à "O") ET (case[4] n'est pas égale à "X"):
+        #alors placer "O" dans la case[4]
+    #sinon si (case[2] est égale à case[5]) ET (case[2] est égale à "O") ET (case[8] n'est pas égale à "X"):
+        #alors placer "O" dans la case[8]
+    #sinon si (case[8] est égale à case[5]) ET (case[8] est égale à "O") ET (case[2] n'est pas égale à "X"):
+        #alors placer "O" dans la case[2]
+    #sinon si (case[2] est égale à case[8]) ET (case[2] est égale à "O") ET (case[5] n'est pas égale à "X"):
+        #alors placer "O" dans la case[5]
+    #sinon si (case[0] est égale à case[4]) ET (case[0] est égale à "O") ET (case[8] n'est pas égale à "X"):
+        #alors placer "O" dans la case[8]
+    #sinon si (case[4] est égale à case[8]) ET (case[4] est égale à "O") ET (case[0] n'est pas égale à "X"):
+        #alors placer "O" dans la case[0]
+    #sinon si (case[0] est égale à case[8]) ET (case[0] est égale à "O") ET (case[4] n'est pas égale à "X"):
+        #alors placer "O" dans la case[4]
+    #sinon si (case[2] est égale à case[4]) ET (case[2] est égale à "O") ET (case[6] n'est pas égale à "X"):
+        #alors placer "O" dans la case[6]
+    #sinon si (case[6] est égale à case[4]) ET (case[6] est égale à "O") ET (case[2] n'est pas égale à "X"):
+        #alors placer "O" dans la case[2]
+    #sinon si (case[2] est égale à case[6]) ET (case[2] est égale à "O") ET (case[4] n'est pas égale à "X"):
+        #alors placer "O" dans la case[4]
+
+    #conditions de blocages
+    #sinon si (grille[0] est égale à grille[1]) ET (grille[0] est égale à "X") ET (grille[2] n'est pas égale à "O"):
+        #alors placer "O" dans la case[2]
+    #sinon si (grille[2] est égale à grille[1]) ET (grille[2] est égale à "X") ET (grille[0] n'est pas égale à "O"):
+        #alors placer "O" dans la case[0]
+    #sinon si (grille[0] est égale à grille[2]) ET (grille[0] est égale à "X") ET (grille[1] n'est pas égale à "O"):
+        #alors placer "O" dans la case[1]
+    #sinon si (grille[3] est égale à grille[4]) ET (grille[3] est égale à "X") ET (grille[5] n'est pas égale à "O"):
+        #alors placer "O" dans la case[5]
+    #sinon si (grille[5] est égale à grille[4]) ET (grille[5] est égale à "X") ET (grille[3] n'est pas égale à "O"):
+        #alors placer "O" dans la case[3]
+    #sinon si (grille[3] est égale à grille[5]) ET (grille[5] est égale à "X") ET (grille[4] n'est pas égale à "O"):
+        #alors placer "O" dans la case[4]
+    #sinon si (grille[6] est égale à grille[7]) ET (grille[6] est égale à "X") ET (grille[8] n'est pas égale à "O"):
+        #alors placer "O" dans la case[8]
+    #sinon si (grille[8] est égale à grille[7]) ET (grille[8] est égale à "X") ET (grille[6] n'est pas égale à "O"):
+        #alors placer "O" dans la case[6]
+    #sinon si (grille[6] est égale à grille[8]) ET (grille[6] est égale à "X") ET (grille[7] n'est pas égale à "O"):
+        #alors placer "O" dans la case[7]
+    #sinon si (grille[0] est égale à grille[3]) ET (grille[0] est égale à "X") ET (grille[6] n'est pas égale à "O"):
+        #alors placer "O" dans la case[6]
+    #sinon si (grille[3] est égale à grille[6]) ET (grille[3] est égale à "X") ET (grille[0] n'est pas égale à "O"):
+        #alors placer "O" dans la case[0]
+    #sinon si (grille[0] est égale à grille[6]) ET (grille[0] est égale à "X") ET (grille[3] n'est pas égale à "O"):
+        #alors placer "O" dans la case[3]
+    #sinon si (grille[1] est égale à grille[4]) ET (grille[1] est égale à "X") ET (grille[7] n'est pas égale à "O"):
+        #alors placer "O" dans la case[7]
+    #sinon si (grille[4] est égale à grille[7]) ET (grille[7] est égale à "X") ET (grille[1] n'est pas égale à "O"):
+        #alors placer "O" dans la case[1]
+    #sinon si (grille[1] est égale à grille[7]) ET (grille[7] est égale à "X") ET (grille[4] n'est pas égale à "O"):
+        #alors placer "O" dans la case[4]
+    #sinon si (grille[2] est égale à grille[5]) ET (grille[2] est égale à "X") ET (grille[8] n'est pas égale à "O"):
+        #alors placer "O" dans la case[8]
+    #sinon si (grille[8] est égale à grille[5]) ET (grille[8] est égale à "X") ET (grille[2] n'est pas égale à "O"):
+        #alors placer "O" dans la case[2]
+    #sinon si (grille[2] est égale à grille[8]) ET (grille[2] est égale à "X") ET (grille[5] n'est pas égale à "O"):
+        #alors placer "O" dans la case[5]
+    #sinon si (grille[0] est égale à grille[4]) ET (grille[0] est égale à "X") ET (grille[8] n'est pas égale à "O"):
+        #alors placer "O" dans la case[8]
+    #sinon si (grille[4] est égale à grille[8]) ET (grille[4] est égale à "X") ET (grille[0] n'est pas égale à "O"):
+        #alors placer "O" dans la case[0]
+    #sinon si (grille[0] est égale à grille[8]) ET (grille[0] est égale à "X") ET (grille[4] n'est pas égale à "O"):
+        #alors placer "O" dans la case[4]
+    #sinon si (grille[2] est égale à grille[4]) ET (grille[2] est égale à "X") ET (grille[6] n'est pas égale à "O"):
+        #alors placer "O" dans la case[6]
+    #sinon si (grille[6] est égale à grille[4]) ET (grille[6] est égale à "X") ET (grille[2] n'est pas égale à "O"):
+        #alors placer "O" dans la case[2]
+    #sinon si (grille[2] est égale à grille[6]) ET (grille[2] est égale à "X") ET (grille[4] n'est pas égale à "O"):
+        #alors placer "O" dans la case[4]
+    
+    #blocage coin
+    #sinon si (case[0] est égale à case[8]) ET (case[0] est égale à "X") ET (case[4] est égale à "O"):
+        #alors placer "O" dans la case[3]
+    #sinon si (case[2] est égale à case[6]) ET (case[2] est égale à "X") ET (case[4] est égale à "O"):
+        #alors placer "O" dans la case[3]
+    #sinon si (case[0] OU case[2] OU case[6] OU case[8]) est égale à "X":
+        #alors placer "O" dans la case[4]
     
     #case unique
-    #
+    #autre:
+        #définir une variable choix qui est égale au choix d'un nb aléatoire dans la liste choix
+        #tant que la case choisit par le bot est prise par un "X" ou un "O":
+            #si la case est prise par un "X":
+                #supprime le choix de la liste
+                #rechoisit un nombre dans la liste
+            #sinon si la case est prise par un "O":
+                #supprime le choix de la liste
+                #rechoisit un nombre dans la liste
+            #sinon si la case est vide:
+                #placer un "O" dans la case choisit
+                #sortir de la boucle while

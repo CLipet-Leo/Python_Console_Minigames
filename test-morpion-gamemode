@@ -1,62 +1,65 @@
 import random
 import time
 
-def coupPfc(num):
-    if num == 1:
-        # définir 1 = pierre
-        return "pierre"
-    elif num == 2:
-        # définir 2 = feuille
-        return "feuille"
-    elif num == 3:
-        # définir 3 = ciseau
-        return "ciseau"
-    else:
-        return "Mauvaise saisie"
+# def coupPfc(num):
+#     if num == 1:
+#         return "pierre"
+#     elif num == 2:
+#         return "feuille"
+#     elif num == 3:
+#         return "ciseau"
+#     else:
+#         return "Mauvaise saisie"
 
-def pfc():
-    scoreP = 0
-    scoreB = 0
-    coupJoueur = int(input("Quel coup veut-tu jouer : Pierre 1, Feuille 2 ou Ciseau 3 ? ", ))
-    turnJoueur = coupPfc(coupJoueur)
-    print("Tu as joué ", turnJoueur)
-    coupBot = random.randint(1, 3)
-    turnBot = coupPfc(coupBot)
-    print("Le bot a joué ", turnBot)
-    if coupJoueur == 1:
-        if coupBot == 1:
-            print("Egalité")
-        elif coupBot == 2:
-            print("Perdu")
-            scoreB = scoreB + 1
-        else:
-            print("Gagné")
-            scoreP = scoreP + 1
-    elif coupJoueur == 2:
-        if coupBot == 1:
-            print("Gagné")
-            scoreP = scoreP + 1
-        elif coupBot == 2:
-            print("Egalité")
-        else:
-            print("Perdu")
-            scoreB = scoreB + 1
-    elif coupJoueur == 3:
-        if coupBot == 1:
-            print("Perdu")
-            scoreB = scoreB + 1
-        elif coupBot == 2:
-            print("Gagné")
-            scoreP = scoreP + 1
-        else:
-            print("Egalité")
-    else:
-        print("Votre choix n'est pas correct, vérifiez la valeur")
+# def pfc(joueur):
+#     scoreP = 0
+#     scoreB = 0
+#     while scoreB or scoreP == 0:
+#         coupJoueur = int(input("Quel coup veut-tu jouer : Pierre 1, Feuille 2 ou Ciseau 3 ? ", ))
+#         turnJoueur = coupPfc(coupJoueur)
+#         print("Tu as joué ", turnJoueur)
+#         coupBot = random.randint(1, 3)
+#         turnBot = coupPfc(coupBot)
+#         print("Le bot a joué ", turnBot)
+#         if coupJoueur == 1:
+#             if coupBot == 1:
+#                 print("Egalité")
+#             elif coupBot == 2:
+#                 print("Perdu")
+#                 scoreB = scoreB + 1
+#             else:
+#                 print("Gagné")
+#                 scoreP = scoreP + 1
+#         elif coupJoueur == 2:
+#             if coupBot == 1:
+#                 print("Gagné")
+#                 scoreP = scoreP + 1
+#             elif coupBot == 2:
+#                 print("Egalité")
+#             else:
+#                 print("Perdu")
+#                 scoreB = scoreB + 1
+#         elif coupJoueur == 3:
+#             if coupBot == 1:
+#                 print("Perdu")
+#                 scoreB = scoreB + 1
+#             elif coupBot == 2:
+#                 print("Gagné")
+#                 scoreP = scoreP + 1
+#             else:
+#                 print("Egalité")
+#         else:
+#             print("Votre choix n'est pas correct, vérifiez la valeur")
         
-    if scoreP==1:
-        return 1
-    elif scoreB==1:
-        return 2
+#         if joueur == 0:
+#             if scoreP==1:
+#                 joueur = 1
+#                 print ("joueur ",joueur)
+#                 break
+#             elif scoreB==1:
+#                 joueur = 2
+#                 print ("joueur ",joueur)
+#                 break
 
 def afficher_grille(grille):
     print("     0)  1)  2)")
@@ -114,15 +117,15 @@ def bot(grille):
         grille[8] = "O"
     elif (grille[8] == grille[5]) and (grille[8] == "O") and (grille[2]!="X"):
         grille[2] = "O"
-    elif (grille[2] == grille[8]) and (grille[2] == "O") and (grille[5]!="O"):
+    elif (grille[2] == grille[8]) and (grille[2] == "O") and (grille[5]!="X"):
         grille[5] = "O"
-    elif (grille[0] == grille[4]) and (grille[0] == "O") and (grille[8]!="O"):
+    elif (grille[0] == grille[4]) and (grille[0] == "O") and (grille[8]!="X"):
         grille[8] = "O"
-    elif (grille[4] == grille[8]) and (grille[4] == "O") and (grille[0]!="O"):
+    elif (grille[4] == grille[8]) and (grille[4] == "O") and (grille[0]!="X"):
         grille[0] = "O"
-    elif (grille[0] == grille[8]) and (grille[0] == "O") and (grille[4]!="O"):
+    elif (grille[0] == grille[8]) and (grille[0] == "O") and (grille[4]!="X"):
         grille[4] = "O"
-    elif (grille[2] == grille[4]) and (grille[2] == "O") and (grille[6]!="O"):
+    elif (grille[2] == grille[4]) and (grille[2] == "O") and (grille[6]!="X"):
         grille[6] = "O"
     elif (grille[6] == grille[4]) and (grille[6] == "O") and (grille[2]!="X"):
         grille[2] = "O"
@@ -185,27 +188,18 @@ def bot(grille):
     elif (grille[0] or grille[2] or grille[6] or grille[8]) == "X":
         grille[4] = "O"
     #random début
-    elif grille[1] == "X":
-        del place[1]
+    else:
         choix = random.choice(place)
-        grille[choix] = "O"
-    elif grille[3] == "X":
-        del place[3]
-        choix = random.choice(place)
-        grille[choix] = "O"
-    elif grille[4] == "X":
-        del place[4]
-        choix = random.choice(place)
-        grille[choix] = "O"
-    elif grille[5] == "X":
-        del place[5]
-        choix = random.choice(place)
-        grille[choix] = "O"
-    elif grille[7] == "X":
-        del place[7]
-        choix = random.choice(place)
-        grille[choix] = "O"
-    
+        while grille[choix] == "X" or "O":
+            if grille[choix] == "X":
+                del place[choix]
+                choix = random.choice(place)
+            elif grille[choix] == "O":
+                del place[choix]
+                choix = random.choice(place)
+            elif grille[choix] == " ":
+                grille[choix] = "O"
+                break
         
 def tour(grille,joueur):
     print("C'est à toi joueur "+str(joueur))
@@ -215,7 +209,8 @@ def tour(grille,joueur):
         while cover == 0 or liver == 0:
             colonne = input("Le numero de colonne que tu veux jouer : ")
             ligne = input("Et maintenant la ligne : ")
-            if grille[int(colonne)+int(ligne)*3]!=" ":
+            case = (int(colonne)+int(ligne)*3)
+            if grille[case]!=" ":
                 afficher_grille(grille)
                 print("Cette case est déjà prise >:( selectionne un autre case !")
             elif colonne >= "3":
@@ -229,8 +224,8 @@ def tour(grille,joueur):
                 cover = 1
                 liver = 1
                 break
-        grille[int(colonne)+int(ligne)*3]="X"
-    elif joueur == "bot":
+        grille[case]="X"
+    elif joueur == 2:
         print("le bot choisi...")
         time.sleep(2)
         bot(grille)
@@ -263,11 +258,8 @@ def match_nul(grille):
 
 #DEBUT
 
-pfc()
-if pfc() == 1:
-    joueur=1
-elif pfc() == 2:
-    joueur=2
+joueur = 1
+#pfc(joueur)
 print("Joueur 1 tu possède les X, Le BOT possède les O")
 print("Que le match COMMENCE !!!")
 grille=[" "," "," "," "," "," "," "," "," "]

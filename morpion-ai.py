@@ -1,5 +1,6 @@
 import random
 import time
+
 def afficher_grille(grille):
     print("     0)  1)  2)")
     print("   -------------")
@@ -56,15 +57,15 @@ def bot(grille):
         grille[8] = "O"
     elif (grille[8] == grille[5]) and (grille[8] == "O") and (grille[2]!="X"):
         grille[2] = "O"
-    elif (grille[2] == grille[8]) and (grille[2] == "O") and (grille[5]!="O"):
+    elif (grille[2] == grille[8]) and (grille[2] == "O") and (grille[5]!="X"):
         grille[5] = "O"
-    elif (grille[0] == grille[4]) and (grille[0] == "O") and (grille[8]!="O"):
+    elif (grille[0] == grille[4]) and (grille[0] == "O") and (grille[8]!="X"):
         grille[8] = "O"
-    elif (grille[4] == grille[8]) and (grille[4] == "O") and (grille[0]!="O"):
+    elif (grille[4] == grille[8]) and (grille[4] == "O") and (grille[0]!="X"):
         grille[0] = "O"
-    elif (grille[0] == grille[8]) and (grille[0] == "O") and (grille[4]!="O"):
+    elif (grille[0] == grille[8]) and (grille[0] == "O") and (grille[4]!="X"):
         grille[4] = "O"
-    elif (grille[2] == grille[4]) and (grille[2] == "O") and (grille[6]!="O"):
+    elif (grille[2] == grille[4]) and (grille[2] == "O") and (grille[6]!="X"):
         grille[6] = "O"
     elif (grille[6] == grille[4]) and (grille[6] == "O") and (grille[2]!="X"):
         grille[2] = "O"
@@ -127,28 +128,19 @@ def bot(grille):
     elif (grille[0] or grille[2] or grille[6] or grille[8]) == "X":
         grille[4] = "O"
     #random début
-    elif grille[1] == "X":
-        del place[1]
+    else:
         choix = random.choice(place)
-        grille[choix] = "O"
-    elif grille[3] == "X":
-        del place[3]
-        choix = random.choice(place)
-        grille[choix] = "O"
-    elif grille[4] == "X":
-        del place[4]
-        choix = random.choice(place)
-        grille[choix] = "O"
-    elif grille[5] == "X":
-        del place[5]
-        choix = random.choice(place)
-        grille[choix] = "O"
-    elif grille[7] == "X":
-        del place[7]
-        choix = random.choice(place)
-        grille[choix] = "O"
-    
-        
+        while grille[choix] == "X" or "O":
+            if grille[choix] == "X":
+                del place[choix]
+                choix = random.choice(place)
+            elif grille[choix] == "O":
+                del place[choix]
+                choix = random.choice(place)
+            elif grille[choix] == " ":
+                grille[choix] = "O"
+                break
+
 def tour(grille,joueur):
     print("C'est à toi joueur "+str(joueur))
     if joueur == 1:
@@ -172,7 +164,7 @@ def tour(grille,joueur):
                 liver = 1
                 break
         grille[int(colonne)+int(ligne)*3]="X"
-    elif joueur == "bot":
+    elif joueur == 2:
         print("le bot choisi...")
         time.sleep(2)
         bot(grille)
@@ -225,6 +217,3 @@ while gagne == 0:
     else:
         joueur = 1
 #FIN
-
-
-
