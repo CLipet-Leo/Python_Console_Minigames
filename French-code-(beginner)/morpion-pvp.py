@@ -28,10 +28,10 @@ def tour(grille,joueur):
             afficher_grille(grille)
             print("Cette case est déjà prise >:( selectionne un autre case !")
         elif colonne >= "3":
-            print("ta mère la pute tu sais pas écrire")
+            print("Trop court !")
             cover = 0
         elif ligne >= "3":
-            print("ta mère la pute tu sais pas écrire")
+            print("Trop long !")
             liver = 0
         else:
             print("OK ! C'est placé dans la case ("+colonne+","+ligne+")")
